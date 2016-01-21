@@ -4,7 +4,7 @@
 #include "RCSwitch.h"
 #include "../IControl.h"
 
-class RCReceiver : public IControl {
+class RCReceiver : public IControlReceiver {
   public:
     RCReceiver();   
     virtual ControlCode GetControlCode();

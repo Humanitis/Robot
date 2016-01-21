@@ -1,7 +1,7 @@
 #include "RCReceiver.h"
 
 RCReceiver::RCReceiver() {
-	this->_switch = new RCSwitch();
+  this->_switch = new RCSwitch();
   this->_switch->enableReceive(0);
 }
 

@@ -7,10 +7,9 @@
 */
  
 #include "RCSwitch.h"
-#include "Modules/RemoteControl/RCReceiver.h"
+#include "../Modules/RemoteControl/RCReceiver.h"
 #include <stdlib.h>
 #include <stdio.h>
-RCSwitch mySwitch = RCSwitch();
 RCReceiver test = RCReceiver();
  
 void setup() {
