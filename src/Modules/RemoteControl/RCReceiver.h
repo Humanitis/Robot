@@ -11,6 +11,10 @@ class RCReceiver : public IControlReceiver {
 
   private:
     RCSwitch *_switch;
+
+    int _commandDelayMs;
+    ControlCode _lastCommand;
+    unsigned long _lastCommandTime; 
 };
 
 #endif

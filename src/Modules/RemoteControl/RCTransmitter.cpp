@@ -6,5 +6,5 @@ RCTransmitter::RCTransmitter() {
 }
 
 void RCTransmitter::SetCode(ControlCode code){
-  this->_switch->send(tatic_cast<unsigned long>(code)), 24);
+  this->_switch->send(static_cast<unsigned long>(code), 24);
 }

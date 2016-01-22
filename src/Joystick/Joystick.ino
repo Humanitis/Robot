@@ -1,5 +1,5 @@
 #include "RCSwitch.h"
-#include "RCTransmitter.h"
+#include "Modules/RemoteControl/RCTransmitter.h"
 
 int up_button = 2;
 int down_button = 4;
@@ -39,19 +39,21 @@ void loop(void)
   int x = map(analogRead(x_axis), 0, 1000, -1, 1);
   Serial.print("x = "), Serial.print(x), Serial.print("\t");
   if(-1 == x) x = 2;
+  x = x * 4;
   ControlCode xCode = static_cast<ControlCode>(x);
 
   int y = map(analogRead(y_axis), 0, 1000, -1, 1);
   Serial.print("y = "), Serial.print(y), Serial.print("\t");
   if(-1 == y) y = 2;
-  y = y * 4;
   ControlCode yCode = static_cast<ControlCode>(y);
 
   ControlCode code = xCode | yCode;
 
   if(0 == static_cast<unsigned long>(code)) code = ControlCode::STOP;
+  Serial.print("code = "), Serial.print(ToString(code)), Serial.print("\t");
 
   test.SetCode(code);
 
-  delay(50);
+  Serial.print("\n");
+  delay(20);
 }

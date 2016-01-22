@@ -12,6 +12,24 @@ enum ControlCode : unsigned long {
 inline ControlCode operator|(ControlCode a, ControlCode b)
 {return static_cast<ControlCode>(static_cast<unsigned long>(a) | static_cast<unsigned long>(b));}
 
+inline const char* ToString(ControlCode code)
+{
+    switch (code)
+    {
+        case ControlCode::FORWARD:   return "FORWARD";
+        case ControlCode::BACK:   return "BACK";
+        case ControlCode::RIGHT:   return "RIGHT";
+        case ControlCode::LEFT:   return "LEFT";
+        case ControlCode::STOP:   return "STOP";
+    }
+
+    String str = String(static_cast<unsigned long>(code));
+    //char cstr[16];
+    char* cstr = new char [17];
+    str.toCharArray(cstr,16);
+    return cstr;
+}
+
 
 
 class IControlReceiver{

@@ -1,13 +1,5 @@
-/*
-  RF_Sniffer
- 
-  Hacked from http://code.google.com/p/rc-switch/
- 
-  by @justy to provide a handy RF code sniffer
-*/
- 
 #include "RCSwitch.h"
-#include "../Modules/RemoteControl/RCReceiver.h"
+#include "Modules/RemoteControl/RCReceiver.h"
 #include <stdlib.h>
 #include <stdio.h>
 RCReceiver test = RCReceiver();
@@ -20,12 +12,7 @@ void setup() {
  
 void loop() {
   ControlCode code = test.GetControlCode();
-  if (code != ControlCode::STOP) {
- 
-     Serial.print("Received ");
-     Serial.print(code);
-
-    Serial.println("");
- 
-  }
+  Serial.print("Received ");
+  Serial.print(ToString(code));
+  Serial.print("\n");
 }

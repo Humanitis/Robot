@@ -7,7 +7,7 @@
 class RCTransmitter : public IControlTransmitter {
   public:
     RCTransmitter();   
-    virtual SetCode(ControlCode code);
+    virtual void SetCode(ControlCode code);
 
   private:
     RCSwitch *_switch;
